@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+	<h2>Spring Boot Contacts</h2>
+	<form method="post">
+		<label for="firstName">FirstName:</label>
+		<input type="text" name="firstName"/><br/>
+		<label for="lastName">LastName:</label>
+		<input type="text" name="lastName"/><br/>
+		<label for="phoneNumber">Phone:</label>
+		<input type="text" name="phoneNumber"/><br/>
+		<label for="emailNumber">Email:</label>
+		<input type="text" name="emailNumber"/><br/>
+		<input type="submit"/>
+	</form>
+	<ul th:each="contact:${contacts}">
+		<li>
+			<span th:text="${contact.firstName}">First</span>
+			<span th:text="${contact.lastName}">Last</span>：
+			<span th:text="${contact.phoneNumber}">PhoneNumber</span>，
+			<span th:text="${contact.emailNumber}">EmailNumber</span>
+		</li>
+	</ul>
+</body>
+</html>
